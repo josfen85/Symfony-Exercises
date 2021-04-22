@@ -1,0 +1,47 @@
+{# templates/lucky/show.html.twig #}
+
+<label for="names">Choose a Name:</label>
+
+<select name="names" id="names">
+    {% for item in json %}
+        <option value={{ item['name'] }}> {{ item['name'] }} </option>
+    {% endfor %}
+
+
+</select>
+
+<select name="pics" id="pics">
+    {% for item in json %}
+        <option value={{ item['icon_2'] }}> {{ item['icon_2'] }} </option>
+    {% endfor %}
+
+
+</select>
+<div>
+<img id="myImg" src="compman.gif" width="107" height="98">
+</div>
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    
+    var a = $("#names")[0].selectedIndex;
+            document.getElementById("pics").selectedIndex=a;
+            var e = document.getElementById("pics");
+            var strUser = e.options[e.selectedIndex].text;
+            //alert(strUser);
+            document.getElementById("myImg").src = strUser;
+
+    $("#pics").hide();
+        $('#names').change(function () {
+           // alert($("#names")[0].selectedIndex);
+            var a = $("#names")[0].selectedIndex;
+            document.getElementById("pics").selectedIndex=a;
+            var e = document.getElementById("pics");
+            var strUser = e.options[e.selectedIndex].text;
+            //alert(strUser);
+            document.getElementById("myImg").src = strUser;
+            });
+
+    </script>
+{% endblock %}
