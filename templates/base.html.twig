@@ -17,7 +17,10 @@
     <body>
         <div id = 'container'>
         <H1>Register Book Application</H2>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="{{path('app_logout')}}">Logout</a>
         </div>
+        {%endif%}
         {% block body %}{% endblock %}
     </body>
 </html>

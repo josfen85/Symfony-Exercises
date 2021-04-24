@@ -43,7 +43,7 @@ class PostController extends AbstractController
 
         if($form->isSubmitted()  && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
-            //dump($post);
+           // dump($request->files);
             $em->persist($post);
             $em->flush();
 

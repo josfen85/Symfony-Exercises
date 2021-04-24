@@ -13,6 +13,9 @@
         <tr>
             <td>ID</td>
             <td>Title</td>
+            <td>Author</td>
+            <td>Year</td>
+            <td>Publication</td>
             <td>Actions</td>
         </tr>
     </thead>
@@ -23,6 +26,15 @@
             <td>
                 <a href="{{path('post.show',{id: post.id })}}">
                 {{post.title}}
+            </td>
+            <td>
+                {{post.Author}}
+            </td>
+            <td>
+                {{post.Year}}
+            </td>
+            <td>
+                {{post.Publication}}
             </td>
             <td>
             <a class= "text-danger" href="{{path('post.delete',{id:post.id})}}">
